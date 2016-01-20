@@ -1,0 +1,27 @@
+  <?xml version="1.0" encoding="UTF-8"?>
+    <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+            id="cordova-plugin-contact-groups" version="0.0.1">
+        <name>Contact Groups</name>
+        <description>Cordova Contact Groups Plugin</description>
+        <license>Apache 2.0</license>
+        <keywords>cordova,contacts,groups,contact groups</keywords>
+        <js-module src="www/contact-groups.js" name="contactGroups">
+            <clobbers target="contactGroups" />
+        </js-module>
+        <platform name="ios">
+            <config-file target="config.xml" parent="/*">
+                <feature name="ContactGroups">
+                    <param name="ios-package" value="CDVContactGroups"/>
+                </feature>
+            </config-file>
+            <header-file src="src/ios/CDVContactGroups.h" />
+            <source-file src="src/ios/CDVContactGroups.m" />
+        </platform>
+         <platform name="android">
+            <config-file target="config.xml" parent="/*">
+                <feature name="ContactGroups">
+                    <param name="android-package" value="org.covve.cordova.plugin.ContactGroups"/>
+                </feature>
+            </config-file>
+        </platform>
+    </plugin>
